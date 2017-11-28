@@ -19,13 +19,11 @@ class Cliente {
     */
   }
   public  int accountAge() {
-    int y1 = fechaF.year();
-    int y2 = fechaL.year();
-    return y2 -y1;
+    return fechaL.year() - fechaF.year();
   }
   public double discount(double amount, int purchases) {
     if (amount >= 20000 && purchases > 5)
-      return 0.08;
+      return 0.085;
     else if (amount >= 20000)
       return 0.13;
     else
@@ -42,13 +40,11 @@ class Cliente {
     return new Fecha(d.day(),d.month(),d.year());
   }
   public void firstPurchase() {
-    if (fechaF == null) {
+    if (fechaF == null)
       setFechaF(today());
-    }
   }
   public double transaction(double amount) {
-    firstPurchase();
-    setFechaL(today());
+    firstPurchase(); setFechaL(today());
     checkMax(amount);
     accountAge(); double discount = discount(amount,purchases);
     System.out.println("Before Discount: "+amount);
