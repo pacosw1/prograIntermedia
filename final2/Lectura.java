@@ -23,6 +23,7 @@ class Lectura
          return positivo(Lectura.getInt("Ingresar valor mayor a 0"));
       else
          return valor;
+
    }
 
    public static char readSexo()
@@ -35,7 +36,7 @@ class Lectura
          return readSexo();
    }
 
-   public static float getFloat(String mensaje)
+   public static float getFloat(String mensaje)//sT
    {
       String v = Lectura.readString(mensaje);
       int m = 0;
@@ -52,10 +53,16 @@ class Lectura
          return getFloat(mensaje);
       else
          return Float.parseFloat(v);
+         //f=new File(path);
 
-   }
+   }   //f2=new FileOutputStream(f,true);
+
+
+
+   //f3=new PrintStream(f2);
    public static int getInt(String mensaje)
    {
+      //f3.println(t);
       String v = Lectura.readString(mensaje);
       int m = 0;
       for (int i = 0; i < v.length();i++)
@@ -71,24 +78,25 @@ class Lectura
    }
 
 
-   public static int readInt(String mensaje)
+   public static int readInt(String mensaje)//rd
    {
-      int check = 0;
-      int g2 = 0;
+      int check = 0;//fis
+      int g2 = 0;//ois
       System.out.println(mensaje);
       DataInputStream w = new DataInputStream (System.in);
+
       String g = "";
-      do 
+      do
       {
           try
          {
             g = w.readLine();
-            g2 = Integer.parseInt(g);
-            check = 0;
+            g2 = Integer.parseInt(g); //fos
+            check = 0;//oos
          }
          catch(IOException e){check = 1;}
          catch(NumberFormatException e){check = 1; System.out.println("Numero Invalido\n"+mensaje);}
-         
+
       } while (check == 1);
       return g2;
    }
@@ -109,17 +117,21 @@ class Lectura
    }
 
 
-    public static String readString(String mensaje)
+    public static String readString(String mensaje)//rt
    {
-      System.out.println(mensaje);
+      System.out.println(mensaje);//f
       DataInputStream w = new DataInputStream (System.in);
-      String g;
+      String g; // fis
       try
       {
          g = w.readLine();
       }
-      catch(IOException e) {g = "1.";}
+      catch(IOException e) {g = "1.";} //InputStreamReader;
       return g;
+      /*
+      BufferedReader;
+      f4.readLine();
+      */
    }
 
    public static char readChar(String mensaje)

@@ -36,8 +36,9 @@ class Save implements Serializable{
       }
       finally {
               try {
+                     
                       fis.close();
-                      input.close();
+
               }
               catch(IOException e) {System.out.println("Error al cerrar el archivo");}
       }

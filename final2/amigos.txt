@@ -1,3 +1,8 @@
 Rectangulo,10.23,10.34
 Triangulo,20.2,3.2
 Triangulo,122,22
+Triangulo,3,3
+Triangulo,10,2
+Triangulo,32,2
+Triangulo,12,2
+Cuadrado,12,2
